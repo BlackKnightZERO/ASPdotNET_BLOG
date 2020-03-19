@@ -1,12 +1,37 @@
 ﻿$(document).ready(function () {
     console.log("ready!");
-
-
     LoadGridData();
+    
+    $(document).delegate('#btnEdit', 'click', function (e) {
+        e.preventDefault();
+        //console.log(this.value);
+        var ID = this.value;
+        console.log(ID);
+        var _dbModel = {
+            'id': ID,
+        };
+        $.ajax({
+            type: "POST",
+            url: "/Blog/LoadSelectedBlog",
+            data: JSON.stringify(_dbModel),
+            contentType: "application/json",
+            datatype: "json",
+            async: false,
+            success: function (data) {
+                console.log(data);
+                $('#EditTitle').val(data[0].title);
+                $('#EditDescription').val(data[0].description);
+            },
+            error: function () {
+                console.log("data not retrieved!");
+            }
+        });
+
+    });
 
 
     $("#btnSubmit").click(function (e) {
-        e.preventDefault();
+       // e.preventDefault();
         var ttl = $("#title").val();
         var desc = $("#description").val();
 
@@ -22,13 +47,6 @@
             datatype: "json",
             async: false,
             success: function (data) {
-                //$("#ddlCity").empty();
-                //var txt = '';
-                //txt += '<option value="-1">-- Select City --</option>';
-                //$.each(data, function (i, item) {
-                //    txt += '<option value="' + item.Code + '">' + item.Value + '</option>';
-                //});
-                //$("#ddlCity").append(txt);
                 alert("!");
             }
         });
@@ -77,7 +95,8 @@
             txt += '<td>' + item.id + '</td>';
             txt += '<td>' + item.title + '</td>';
             txt += '<td>' + item.description + '</td>';
-            txt += '<td><button onclick=LoadEditData(' + item.id + ') type="button" id="btnEdit" class="btn btn-info">Edit</button> <button onclick=DeleteData(' + item.id + ')  type="button" id="btnDelete" class="btn btn-danger">Delete</button></td>';
+            txt += '<td><button value="' + item.id +'" type="button" id="btnEdit" class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>';
+            txt += '<button  value="' + item.id +'" type= "button" id = "btnDelete" class="btn btn-sm btn-danger" > Delete</button ></td > ';
             //txt += '<td><button onclick=LoadEditData(' + item.AdminID + ') type="button" id="btnEdit" class="btn btn-info">Edit</button> <button onclick=DeleteData(' + item.AdminID + ')  type="button" id="btnDelete" class="btn btn-danger">Delete</button></td>';
             txt += '</tr>';
         });
@@ -86,6 +105,12 @@
         $("#tblBlog2").append(txt);
     }
 
+    function LoadEditData(id) {
+        console.log(id);
+    }
+    function DeleteData(id) {
+
+    }
 
     function BindGridData(data) {
         $("#tblBlog").kendoGrid().empty();

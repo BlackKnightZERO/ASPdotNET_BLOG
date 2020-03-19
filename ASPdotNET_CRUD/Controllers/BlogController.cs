@@ -39,5 +39,13 @@ namespace ASPdotNET_CRUD.Controllers
             //return Json(1);
 
         }
+        [HttpPost]
+        public JsonResult LoadSelectedBlog(BlogsDBModel _dbModel)
+        {
+            objList = new BlogList();
+            List<BlogsDBModel> _dbModelList = new List<BlogsDBModel>();
+            _dbModelList = objList.LoadSelectedBlog(_dbModel);
+            return this.Json(_dbModelList, JsonRequestBehavior.AllowGet);
+        }
     }
 }
