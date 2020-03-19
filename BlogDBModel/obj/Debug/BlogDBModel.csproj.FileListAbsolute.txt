@@ -1,0 +1,5 @@
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogDBModel\bin\Debug\BlogDBModel.dll
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogDBModel\bin\Debug\BlogDBModel.pdb
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogDBModel\obj\Debug\BlogDBModel.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogDBModel\obj\Debug\BlogDBModel.dll
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogDBModel\obj\Debug\BlogDBModel.pdb

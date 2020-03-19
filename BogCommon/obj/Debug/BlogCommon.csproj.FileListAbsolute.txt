@@ -1,0 +1,6 @@
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BogCommon\bin\Debug\BogCommon.dll
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BogCommon\bin\Debug\BogCommon.pdb
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BogCommon\obj\Debug\BlogCommon.csprojAssemblyReference.cache
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BogCommon\obj\Debug\BlogCommon.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BogCommon\obj\Debug\BogCommon.dll
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BogCommon\obj\Debug\BogCommon.pdb

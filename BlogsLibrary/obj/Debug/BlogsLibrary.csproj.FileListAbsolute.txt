@@ -1,0 +1,11 @@
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\bin\Debug\BlogsLibrary.dll
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\bin\Debug\BlogsLibrary.pdb
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\obj\Debug\BlogsLibrary.csprojAssemblyReference.cache
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\obj\Debug\BlogsLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\obj\Debug\BlogsLibrary.dll
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\obj\Debug\BlogsLibrary.pdb
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\bin\Debug\BlogDBModel.dll
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\bin\Debug\BogCommon.dll
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\bin\Debug\BlogDBModel.pdb
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\bin\Debug\BogCommon.pdb
+C:\Users\Asus\source\repos\ASPdotNET_CRUD\BlogsLibrary\obj\Debug\BlogsLibrary.csproj.CopyComplete
