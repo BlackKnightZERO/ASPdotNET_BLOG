@@ -71,8 +71,8 @@ namespace BlogsLibrary
                                       id = Convert.ToInt32(row["id"].ToString()),
                                       title = row["title"].ToString(),
                                       description = row["description"].ToString(),
-                                      //AddedBy = row["AddedBy"].ToString(),
-                                      //DateAdded = row["DateAdded"].ToString(),
+                                      AddedBy = row["AddedBy"].ToString(),
+                                      DateAdded = row["DateAdded"].ToString(),
 
                                   }).ToList();
                 }
@@ -113,8 +113,8 @@ namespace BlogsLibrary
                                       id = Convert.ToInt32(row["id"].ToString()),
                                       title = row["title"].ToString(),
                                       description = row["description"].ToString(),
-                                      //AddedBy = row["AddedBy"].ToString(),
-                                      //DateAdded = row["DateAdded"].ToString(),
+                                      AddedBy = row["AddedBy"].ToString(),
+                                      DateAdded = row["DateAdded"].ToString(),
                                   }).ToList();
                 }
                 return _modelList;

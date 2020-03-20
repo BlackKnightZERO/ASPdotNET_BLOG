@@ -19,6 +19,10 @@
             async: false,
             success: function (data) {
                 console.log(data);
+                $('#EditAuthor').text("");
+                $('#EditDate').text("");
+                $('#EditDate').text(data[0].DateAdded);
+                $('#EditAuthor').text(data[0].AddedBy);
                 $('#EditTitle').val(data[0].title);
                 $('#EditDescription').val(data[0].description);
             },
@@ -47,7 +51,11 @@
             datatype: "json",
             async: false,
             success: function (data) {
-                alert("!");
+                //alert("!");
+                $('#addBlogModal').modal('toggle');
+                $('#title').val("");
+                $('#description').val("");
+                LoadGridData();
             }
         });
     });
@@ -63,7 +71,7 @@
             async: false,
             success: function (data) {
                 console.log(data);
-                //BindGridData(data);
+                BindGridData(data);
                 tableAppend(data);
             },
             error: function(){
@@ -81,6 +89,8 @@
             '<th>Id</th>' +
             '<th>Title</th>' +
             '<th>Details</th>' +
+            '<th>Author</th>' +
+            '<th>Date</th>' +
             '<th>Action</th>' +
             '</tr>' +
             '</thead>' +
@@ -95,6 +105,8 @@
             txt += '<td>' + item.id + '</td>';
             txt += '<td>' + item.title + '</td>';
             txt += '<td>' + item.description + '</td>';
+            txt += '<td>' + item.AddedBy + '</td>';
+            txt += '<td>' + item.DateAdded + '</td>';
             txt += '<td><button value="' + item.id +'" type="button" id="btnEdit" class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>';
             txt += '<button  value="' + item.id +'" type= "button" id = "btnDelete" class="btn btn-sm btn-danger" > Delete</button ></td > ';
             //txt += '<td><button onclick=LoadEditData(' + item.AdminID + ') type="button" id="btnEdit" class="btn btn-info">Edit</button> <button onclick=DeleteData(' + item.AdminID + ')  type="button" id="btnDelete" class="btn btn-danger">Delete</button></td>';
