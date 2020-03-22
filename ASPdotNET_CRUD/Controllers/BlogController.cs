@@ -47,5 +47,37 @@ namespace ASPdotNET_CRUD.Controllers
             _dbModelList = objList.LoadSelectedBlog(_dbModel);
             return this.Json(_dbModelList, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult DeleteBlog(BlogsDBModel _dbModel)
+        {
+            int _result = 0;
+            objList = new BlogList();
+            _result = objList.DeleteBlog(_dbModel);
+            if (_result > 0)
+                return Json(new { success = true });
+            else
+                return Json(new { success = false });
+        }
+
+        [HttpPost]
+        public JsonResult Update(BlogsDBModel _dbModel)
+        {
+            int _result = 0;
+            objList = new BlogList();
+            _result = objList.Update(_dbModel);
+            if (_result > 0)
+                return Json(new { success = true });
+            else
+                return Json(new { success = false });
+        }
+
+        [HttpGet]
+
+        public ActionResult Detail()
+        {
+            return View();
+        }
+
     }
 }

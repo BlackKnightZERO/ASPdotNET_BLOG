@@ -35,11 +35,11 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label>
+                        <label for="title">Title</label>
                         <input type="text" class="form-control" id="title">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Description</label>
+                        <label for="description">Description</label>
                         <textarea id="description" class="form-control"></textarea>
                     </div>
 
@@ -67,11 +67,12 @@
                 <div class="modal-body">
                     <p>Posted On - <span id="EditDate" style="color:lightslategrey;"></span></p>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label>
+                        <input type="hidden" id="EditId" value="" />
+                        <label for="EditTitle">Title</label>
                         <input type="text" class="form-control" id="EditTitle">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Description</label>
+                        <label for="EditDescription">Description</label>
                         <textarea id="EditDescription" class="form-control"></textarea>
                     </div>
 
@@ -86,8 +87,11 @@
     </div>
 </form>
 <!--EDITModal-->
+<button class="btn btn-primary" id="kendoToggler">Kendo Table</button>
+<br />
+<br />
 @*Kendo Table*@
-<div class="row">
+<div class="row toggleDiv" style="display:none;">
     <div class="col-md-12 col-lg-12">
         <div id="tblBlog">
 

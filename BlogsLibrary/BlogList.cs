@@ -91,6 +91,33 @@ namespace BlogsLibrary
                 conn.Dispose();
             }
         }
+        public int Update(BlogsDBModel _dbModel)
+        {
+            SqlConnection conn = new SqlConnection(DBConnection.GetConnection());
+            conn.Open();
+            SqlCommand dCmd = new SqlCommand("SP_SET_TBL_BLOG", conn);
+            dCmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                dCmd.Parameters.AddWithValue("@id", _dbModel.id);
+                dCmd.Parameters.AddWithValue("@title", _dbModel.title);
+                dCmd.Parameters.AddWithValue("@description", _dbModel.description);
+                
+                dCmd.Parameters.AddWithValue("@QryOption", 2);
+                return dCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //UtilityOptions.ErrorLog(ex.ToString(), MethodBase.GetCurrentMethod().Name);
+                throw ex;
+            }
+            finally
+            {
+                dCmd.Dispose();
+                conn.Close();
+                conn.Dispose();
+            }
+        }
         public List<BlogsDBModel> LoadSelectedBlog(BlogsDBModel _dbModel)
         {
             List<BlogsDBModel> _modelList = new List<BlogsDBModel>();
@@ -128,6 +155,30 @@ namespace BlogsLibrary
             {
                 dt.Dispose();
                 dAd.Dispose();
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+        public int DeleteBlog(BlogsDBModel _dbModel)
+        {
+            SqlConnection conn = new SqlConnection(DBConnection.GetConnection());
+            conn.Open();
+            SqlCommand dCmd = new SqlCommand("SP_SET_TBL_BLOG", conn);
+            dCmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                dCmd.Parameters.AddWithValue("@id", _dbModel.id);
+                dCmd.Parameters.AddWithValue("@QryOption", 5);
+                return dCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //UtilityOptions.ErrorLog(ex.ToString(), MethodBase.GetCurrentMethod().Name);
+                throw ex;
+            }
+            finally
+            {
+                dCmd.Dispose();
                 conn.Close();
                 conn.Dispose();
             }
